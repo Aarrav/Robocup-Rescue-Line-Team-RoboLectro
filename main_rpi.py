@@ -10,8 +10,6 @@ from threading import Thread
 import importlib.util
 import serial
 
-sys.path.append('/home/robolectro/robocup/tflite1/tflite1-env/lib/python3.9/site-packages')
-
 
 picam2 = Picamera2()
 dispW=1280
@@ -124,15 +122,6 @@ else: # This is a TF1 model
 reset = False
 
 def ball_pick(colour):
-    a = ""
-    flag1 = False
-    xmax=0
-    xmin=0
-    ymin=0
-    while True:
-        
-        if ser.inWaiting():
-            a = ser.readline().decode('utf-8').rstrip()
 
         if a == 'reset':
             global reset
